@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 /*
 * This is the main app route [Chatify Messenger]
 */
-Route::get('/', [\Chatify\Http\Controllers\MessagesController::class,'index'])->name(config('chatify.routes.prefix'));
+Route::get('/', [\Chatify\Http\Controllers\MessagesController::class,'index'])->name('chatify');
 
 /**
  *  Fetch info for specific id [user/group]
@@ -33,7 +33,7 @@ Route::post('/fetchMessages', [\Chatify\Http\Controllers\MessagesController::cla
 /**
  * Download attachments route to create a downloadable links
  */
-Route::get('/download/{fileName}',[\Chatify\Http\Controllers\MessagesController::class,'download'])->name(config('chatify.attachments.download_route_name'));
+Route::get('/download/{fileName}',[\Chatify\Http\Controllers\MessagesController::class,'download'])->name('attachments.download');
 
 /**
  * Authintication for pusher private channels
